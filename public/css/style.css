@@ -1,4 +1,4 @@
-.container {
+/* .container {
   background: #eee;
   box-shadow: 1px 8px 12px 0 #000;
   padding: 10px 30px;
@@ -27,6 +27,9 @@ form {
   position: absolute;
   bottom: 10px;
   right: 10px;
+} */
+body {
+  padding: 10% 18%;
 }
 
 .errorContainer {
@@ -38,4 +41,15 @@ form {
 
 .error {
   color: #E03D3D;
+}
+
+.successContainer {
+  background: #85e085;
+  padding: 2px;
+  display: none;
+  margin-bottom: 25px;
+}
+
+.success {
+  color: black;
 }
