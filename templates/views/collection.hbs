@@ -1,0 +1,12 @@
+{{> header}}
+
+{{#each forms}}
+  <ul>
+    <li>Name: {{ this.name }}</li>
+    <li>Email: {{ this.email }}</li>
+    <li>Message:{{ this.message }}</li>
+    <li>Wants newsletter: {{ this.signUp }}</li>
+  </ul>
+  {{/each}}
+
+  {{> footer}}

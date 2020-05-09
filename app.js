@@ -1,4 +1,4 @@
-//jshint esversion:6
+//jshint esversion:8
 
 const express = require('express');
 const app = express();
@@ -12,9 +12,30 @@ const {
 } = require('express-validator');
 const req = require('request');
 const secretKey = '6LfLdvQUAAAAAJLGuXce4Ul6sHD1IOU1OPX_Y2qt';
+const date = require('./date.js');
+
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/tasty-treats', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+var db = mongoose.connection;
+db.on('error', console.log.bind(console, "Connection to db error"));
+db.once('open', function(callback) {
+  console.log("Connection to db succeeded");
+});
+
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  message: String,
+  signUp: String
+});
+
+const User = mongoose.model("User", userSchema);
 
 let urlencoded = bodyParser.urlencoded({
-  extended: false
+  extended: true
 });
 
 app.use(bodyParser.json());
@@ -34,9 +55,21 @@ app.get('/', (request, response) => {
   });
 });
 
+app.get('/admin', (request, response) => {
+
+  User.find().sort({
+    '_id': -1
+  }).exec(function(err, data) {
+    response.render('collection.hbs', {
+      // user: request.user,
+      forms: data
+    });
+  });
+});
+
 app.post('/formData', [
 
-  check('email').isEmail(),
+  check('email').isEmail().withMessage('Email address is invalid')
 
 ], (request, response) => {
 
@@ -71,13 +104,23 @@ app.post('/formData', [
       });
     }
 
-   response.json({
+    const user = new User({
+      date: date.currentDate,
+      name: request.body.name,
+      email: request.body.email,
+      message: request.body.message,
+      signUp: request.body.signUp
+    });
+
+    user.save();
+    console.log(user);
+
+    response.status(202).json({
       'msg': 'You have been verified!',
       'score': body.score,
       success: 'Ok'
     });
   });
-
 });
 
 app.listen(port, () => console.log('Server running on port:' + port));
