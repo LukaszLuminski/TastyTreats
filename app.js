@@ -17,7 +17,7 @@ const date = require('./date.js');
 
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/tasty-treats', {
+mongoose.connect('mongodb://localhost:27017/tasty-treats', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
@@ -64,13 +64,22 @@ app.get('/admin', (request, response) => {
   User.find().sort({
     '_id': -1
   }).exec(function(err, data) {
-      response.render('collection', {
+    if (err) {
+      return response.render('collection', {
         // user: request.user,
         title: 'Tasty Treats | Forms',
-        forms: data
+        forms: '',
+        error: err
       });
-  });
+    }
 
+    response.render('collection', {
+      // user: request.user,
+      title: 'Tasty Treats | Forms',
+      forms: data
+    });
+
+  });
 });
 
 app.post('/admin', (request, response, next) => {
@@ -131,7 +140,8 @@ app.post('/formData', [
     console.log(user);
 
     response.status(202).json({
-      success: 'Ok'
+      success: 'Ok',
+      user: user
     });
   });
 });
