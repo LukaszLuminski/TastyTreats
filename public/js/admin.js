@@ -1,4 +1,4 @@
 
-$('.close-icon').on('click',function() {
+$('.close-icon, .hide-icon').on('click',function() {
   $(this).closest('.card').fadeOut();
 });

@@ -2,11 +2,10 @@
 
 {{#each forms}}
   <div class="card card-outline-primary text-center">
-    <form action="/admin" method="post">
+    <button class="hide-icon" data-effect="fadeOut">HIDE</button>
+    <form class="delete-form" action="/admin" method="post">
       <input type="hidden" name="id" value="{{ this._id }}">
-
-      <!-- <span class="close-icon" data-effect="fadeOut" type="submit"><i class="fa fa-times"></i></span> -->
-      <button class="close-icon btn btn-danger" data-effect="fadeOut" type="submit">DELETE</button>
+      <button class="close-icon" data-effect="fadeOut" type="submit">DELETE</button>
     </form>
     <div class="card-block">
       <ul>

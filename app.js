@@ -72,10 +72,11 @@ app.get('/admin', (request, response) => {
 
 app.post('/admin', (request, response, next) => {
   var id = request.body.id;
-      User.findByIdAndRemove(id, function (err, deletedUser) {
-         // handle any potential errors here
-         // response.redirect('/admin');
-       });
+  User.findByIdAndRemove(id, function(err, deletedUser) {
+    if (err) {
+      console.log(err);
+    }
+  });
 });
 
 app.post('/formData', [

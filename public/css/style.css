@@ -1,33 +1,4 @@
-/* .container {
-  background: #eee;
-  box-shadow: 1px 8px 12px 0 #000;
-  padding: 10px 30px;
-  margin: 100px auto;
-  width: 85%;
-  position: relative;
-}
 
-input {
-  width: 100%;
-}
-
-.label {
-  margin-bottom: 5px;
-}
-
-form {
-  margin-bottom: 100px;
-}
-
-.submit {
-  color: #eee;
-  background: #444;
-  padding: 3px 12px;
-  border: none;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-} */
 body {
   padding: 10% 18%;
 }
@@ -54,6 +25,29 @@ body {
   color: black;
 }
 
-.close-icon {
+.card {
+  transition: .3s;
+}
+
+.delete-form {
+  width: 69px;
+}
+
+.close-icon, .hide-icon {
   cursor: pointer;
+  width: 69px;
+  display: inline;
+  background: white;
+  border: none;
+  opacity: .3;
+  transition: .2s;
+}
+
+.close-icon:active, .hide-icon:active {
+  border: none;
+  outline:none;
+}
+
+.close-icon:hover, .hide-icon:hover {
+  opacity: 1;
 }
