@@ -53,3 +53,7 @@ body {
 .success {
   color: black;
 }
+
+.close-icon {
+  cursor: pointer;
+}

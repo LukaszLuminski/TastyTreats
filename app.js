@@ -17,7 +17,8 @@ const date = require('./date.js');
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/tasty-treats', {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: false
 });
 var db = mongoose.connection;
 db.on('error', console.log.bind(console, "Connection to db error"));
@@ -26,6 +27,7 @@ db.once('open', function(callback) {
 });
 
 const userSchema = new mongoose.Schema({
+  date: String,
   name: String,
   email: String,
   message: String,
@@ -62,9 +64,18 @@ app.get('/admin', (request, response) => {
   }).exec(function(err, data) {
     response.render('collection.hbs', {
       // user: request.user,
+      title: 'Tasty Treats | Forms',
       forms: data
     });
   });
+});
+
+app.post('/admin', (request, response, next) => {
+  var id = request.body.id;
+      User.findByIdAndRemove(id, function (err, deletedUser) {
+         // handle any potential errors here
+         // response.redirect('/admin');
+       });
 });
 
 app.post('/formData', [

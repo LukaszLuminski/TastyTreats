@@ -46,6 +46,7 @@ function sendToken(captcha) {
   .then((data)=>{
 
   $('input[type="text"], textarea').val('');
+$('input[type=checkbox]').prop('checked',false);
 
     if (data.success === 'Ok') {
       console.log('Successful!');
