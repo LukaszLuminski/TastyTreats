@@ -22,10 +22,10 @@ mongoose.connect(process.env.mongodb_uri || 'mongodb://localhost:27017/tasty-tre
   useFindAndModify: false
 });
 var db = mongoose.connection;
-db.on('error', console.log.bind(console, "Connection to db error"));
-db.once('open', function(callback) {
-  console.log("Connection to db succeeded");
-});
+// db.on('error', console.log.bind(console, "Connection to db error"));
+// db.once('open', function(callback) {
+//   console.log("Connection to db succeeded");
+// });
 
 const userSchema = new mongoose.Schema({
   date: String,
@@ -53,24 +53,27 @@ hbs.registerPartials(partialsPath);
 app.use(express.static(publicStaticDirPath));
 
 app.get('/', (request, response) => {
-  response.render('index.hbs', {
+  response.render('index', {
     title: 'Tasty Treats | Contact'
   });
 });
 
 app.get('/admin', (request, response) => {
 
-  // response.render('collection.hbs', {
-  //     title: 'Tasty Treats | Forms'
-  //   });
   User.find().sort({
     '_id': -1
   }).exec(function(err, data) {
-    response.render('collection.hbs', {
-      // user: request.user,
-      title: 'Tasty Treats | Forms',
-      forms: data
-    });
+    if (!err) {
+      response.render('collection', {
+        // user: request.user,
+        title: 'Tasty Treats | Forms',
+        forms: data
+      });
+    } else {
+      response.json({
+        error: err
+      });
+    }
   });
 
 });
