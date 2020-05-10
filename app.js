@@ -59,15 +59,19 @@ app.get('/', (request, response) => {
 
 app.get('/admin', (request, response) => {
 
-  User.find().sort({
-    '_id': -1
-  }).exec(function(err, data) {
-    response.render('collection.hbs', {
-      // user: request.user,
-      title: 'Tasty Treats | Forms',
-      forms: data
+  response.render('collection.hbs', {
+      title: 'Tasty Treats | Forms'
     });
-  });
+  // User.find().sort({
+  //   '_id': -1
+  // }).exec(function(err, data) {
+  //   response.render('collection.hbs', {
+  //     // user: request.user,
+  //     title: 'Tasty Treats | Forms',
+  //     forms: data
+  //   });
+  // });
+
 });
 
 app.post('/admin', (request, response, next) => {
