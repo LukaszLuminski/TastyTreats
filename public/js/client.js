@@ -34,9 +34,7 @@ function sendToken(captcha) {
     signUp: formData.get('signUp')
   });
 
-  const proxyurl = "https://cors-anywhere.herokuapp.com/";
-
-  fetch(proxyurl + 'http://localhost:3000/formData', {
+  fetch('/formData', {
 
     method: 'POST',
     headers: {
