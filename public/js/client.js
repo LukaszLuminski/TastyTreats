@@ -61,8 +61,6 @@ $('input[type=checkbox]').prop('checked',false);
       let msg = 'You have successfully submitted the form!';
       success.innerHTML = `<li>${msg}</li>`;
 
-      // alert('msg: ' + data.msg + ', score ' + data.score);
-
       console.log(data);
 
 

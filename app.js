@@ -128,8 +128,6 @@ app.post('/formData', [
     console.log(user);
 
     response.status(202).json({
-      'msg': 'You have been verified!',
-      'score': body.score,
       success: 'Ok'
     });
   });
