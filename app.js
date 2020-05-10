@@ -15,7 +15,7 @@ const secretKey = '6LfLdvQUAAAAAJLGuXce4Ul6sHD1IOU1OPX_Y2qt';
 const date = require('./date.js');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/tasty-treats', {
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/tasty-treats', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
