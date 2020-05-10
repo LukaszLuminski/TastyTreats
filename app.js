@@ -1,6 +1,6 @@
-//jshint esversion:8
+//jshint esversion:6
 
-require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,9 +12,6 @@ const {
   validationResult
 } = require('express-validator');
 const req = require('request');
-const secretKey = '6LfLdvQUAAAAAJLGuXce4Ul6sHD1IOU1OPX_Y2qt';
-const date = require('./date.js');
-
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/tasty-treats', {
@@ -22,13 +19,14 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/tasty-tre
   useUnifiedTopology: true,
   useFindAndModify: false
 });
+
 var db = mongoose.connection;
 db.on('error', console.log.bind(console, "Connection to db error"));
 db.once('open', function(callback) {
   console.log("Connection to db succeeded");
 });
 
-const userSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
   date: String,
   name: String,
   email: String,
@@ -36,7 +34,7 @@ const userSchema = new mongoose.Schema({
   signUp: String
 });
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", UserSchema);
 
 let urlencoded = bodyParser.urlencoded({
   extended: true
@@ -44,6 +42,7 @@ let urlencoded = bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 app.use(urlencoded);
+
 const publicStaticDirPath = path.join(__dirname, './public');
 const viewsPath = path.join(__dirname, './templates/views');
 const partialsPath = path.join(__dirname, './templates/partials');
@@ -60,25 +59,13 @@ app.get('/', (request, response) => {
 });
 
 app.get('/admin', (request, response) => {
-
   User.find().sort({
     '_id': -1
   }).exec(function(err, data) {
-    if (err) {
-      return response.render('collection', {
-        // user: request.user,
-        title: 'Tasty Treats | Forms',
-        forms: '',
-        error: err
-      });
-    }
-
     response.render('collection', {
-      // user: request.user,
       title: 'Tasty Treats | Forms',
       forms: data
     });
-
   });
 });
 
@@ -102,6 +89,8 @@ app.post('/formData', [
       'msg': 'Captcha token is undefined'
     });
   }
+
+const secretKey = '6LfLdvQUAAAAAJLGuXce4Ul6sHD1IOU1OPX_Y2qt';
 
   const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${request.body.captcha}`;
 
@@ -127,6 +116,8 @@ app.post('/formData', [
         errors: errors.array()
       });
     }
+
+    const date = require('./date.js');
 
     const user = new User({
       date: date.currentDate,
