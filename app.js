@@ -1,5 +1,6 @@
 //jshint esversion:8
 
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -22,10 +23,10 @@ mongoose.connect(process.env.mongodb_uri || 'mongodb://localhost:27017/tasty-tre
   useFindAndModify: false
 });
 var db = mongoose.connection;
-// db.on('error', console.log.bind(console, "Connection to db error"));
-// db.once('open', function(callback) {
-//   console.log("Connection to db succeeded");
-// });
+db.on('error', console.log.bind(console, "Connection to db error"));
+db.once('open', function(callback) {
+  console.log("Connection to db succeeded");
+});
 
 const userSchema = new mongoose.Schema({
   date: String,
@@ -63,17 +64,11 @@ app.get('/admin', (request, response) => {
   User.find().sort({
     '_id': -1
   }).exec(function(err, data) {
-    if (!err) {
       response.render('collection', {
         // user: request.user,
         title: 'Tasty Treats | Forms',
         forms: data
       });
-    } else {
-      response.json({
-        error: err
-      });
-    }
   });
 
 });
