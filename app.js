@@ -17,7 +17,7 @@ const date = require('./date.js');
 
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/tasty-treats', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/tasty-treats', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
