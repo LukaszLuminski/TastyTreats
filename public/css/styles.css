@@ -1,8 +1,7 @@
 body {
   background-color: white;
   height: 100%;
-  width: 100%;
-  font-size: 1.3rem !important; }
+  width: 100%; }
 
 .fluid-container {
   background-color: #E8ECEF;
@@ -19,13 +18,14 @@ body {
   background-size: cover;
   background-position: center;
   background-image: url("/images/body-bg.jpeg"); }
-  .navbar a {
+  .navbar a:not(.navbar-brand) {
+    font-size: 1.3rem !important; }
+  .navbar a, .navbar .navbar-brand a {
     font-family: 'Satisfy', sans-serif, cursive !important; }
-
-.navbar-brand {
-  font-size: 1.9rem !important;
-  padding-top: 0;
-  padding-bottom: 0; }
+  .navbar .navbar-brand {
+    font-size: 1.9rem !important;
+    padding-top: 0;
+    padding-bottom: 0; }
 
 .nav-link:not(.last) {
   pointer-events: none; }
