@@ -4,7 +4,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
-const encrypt = require('mongoose-encryption');
 const port = process.env.PORT || 3000;
 const path = require('path');
 const {
