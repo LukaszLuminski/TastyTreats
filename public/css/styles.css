@@ -1,0 +1,73 @@
+
+body {
+  background-color: #E8ECEF;
+}
+
+.errorContainer {
+  background: #DDAAAA;
+  padding: 2px;
+  display: none;
+  margin-bottom: 25px;
+}
+
+.error {
+  color: #E03D3D;
+}
+
+.successContainer {
+  background: #85e085;
+  padding: 2px;
+  display: none;
+  margin-bottom: 25px;
+}
+
+.success {
+  color: black;
+}
+
+.card {
+  transition: .3s;
+}
+
+.delete-form {
+  width: 69px;
+}
+
+.close-icon, .hide-icon {
+  cursor: pointer;
+  width: 69px;
+  display: inline;
+  background: white;
+  border: none;
+  opacity: .3;
+  transition: .2s;
+}
+
+.close-icon:active, .hide-icon:active {
+  border: none;
+  outline:none;
+}
+
+.close-icon:hover, .hide-icon:hover {
+  opacity: 1;
+}
+
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+
+.negative {
+  background-color: red;
+}
+
+.positive {
+  background-color: green;
+}

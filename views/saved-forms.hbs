@@ -1,12 +1,10 @@
 {{> header}}
 
-{{ error }}
-
 {{#each forms}}
 
   <div class="card card-outline-primary text-center">
     <button class="hide-icon" data-effect="fadeOut">HIDE</button>
-    <form class="delete-form" action="/admin" method="post">
+    <form class="delete-form" action="/delete" method="post">
       <input type="hidden" name="id" value="{{ this._id }}">
       <button class="close-icon" data-effect="fadeOut" type="submit">DELETE</button>
     </form>
@@ -22,6 +20,11 @@
   </div>
 {{/each}}
 
+<form class="" action="/logout" method="post">
+  <button class="btn btn-light btn-lg" type="submit" role="button" onClick="history.go(0)">Log Out</btn>
+</form>
+
 {{> scripts}}
+
 <script src="/js/admin.js"></script>
 {{> footer}}

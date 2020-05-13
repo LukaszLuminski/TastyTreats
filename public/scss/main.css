@@ -1,5 +1,6 @@
 .navbar {
-  z-index: 1000; }
+  z-index: 1000;
+}
 
 header {
   background-color: black;
@@ -9,11 +10,13 @@ header {
   z-index: 1;
   position: relative;
   vertical-align: middle;
-  color: white; }
+  color: white;
+}
 
 .profile {
   display: inline-block;
-  margin-top: 60px; }
+  margin-top: 60px;
+}
 
 .bg {
   z-index: -1;
@@ -25,45 +28,56 @@ header {
   position: absolute;
   background-size: cover;
   background-position: center;
-  background-image: url("/images/background.jpeg"); }
-
+  background-image: url("/images/background.jpeg");
+}
 @media (hover: hover) {
   .bg {
-    background-attachment: fixed; } }
+    background-attachment: fixed;
+  }
+}
 
 .navbar {
   padding-left: 18%;
-  padding-right: 18%; }
+  padding-right: 18%;
+}
 
 .nav-link:not(.last) {
-  pointer-events: none; }
+  pointer-events: none;
+}
 
 .mb-4 {
-  padding: 54px 18%; }
+  padding: 54px 18%;
+}
 
 .errorContainer {
   background: #DDAAAA;
   padding: 2px;
   display: none;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+}
 
 .error {
-  color: #E03D3D; }
+  color: #E03D3D;
+}
 
 .successContainer {
   background: #85e085;
   padding: 2px;
   display: none;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+}
 
 .success {
-  color: black; }
+  color: black;
+}
 
 .card {
-  transition: 0.3s; }
+  transition: 0.3s;
+}
 
 .delete-form {
-  width: 69px; }
+  width: 69px;
+}
 
 .close-icon,
 .hide-icon {
@@ -73,15 +87,16 @@ header {
   background: white;
   border: none;
   opacity: 0.3;
-  transition: 0.2s; }
-
+  transition: 0.2s;
+}
 .close-icon:active,
 .hide-icon:active {
   border: none;
-  outline: none; }
-
+  outline: none;
+}
 .close-icon:hover,
 .hide-icon:hover {
-  opacity: 1; }
+  opacity: 1;
+}
 
 /*# sourceMappingURL=main.css.map */

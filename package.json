@@ -4,21 +4,25 @@
   "description": "Contact form with validation",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ui": "browser-sync start --proxy=localhost:5000 --files='**/*.css, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify",
+    "scss": "node-sass --watch public/scss -o public/css"
   },
   "author": "Lukasz Luminski",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
+    "browser-sync": "^2.26.7",
+    "connect-mongo": "^3.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-flash": "0.0.2",
     "express-session": "^1.17.1",
     "express-validator": "^6.4.1",
     "hbs": "^4.1.1",
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.13",
+    "mongoose-encryption": "^2.0.2",
+    "node-sass": "^4.14.1",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.0.1",

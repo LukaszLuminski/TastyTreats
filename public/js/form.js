@@ -13,7 +13,7 @@ function runVerify(e) {
 
 function runCaptcha() {
   grecaptcha.execute('6LfLdvQUAAAAAGmo47NQbb4cdV73OxY2r7DmSLBj', {
-    action: 'index'
+    action: 'home'
   }).then(function(token) {
 
     const captcha = token;
@@ -42,10 +42,10 @@ function sendToken(captcha) {
       'Content-type': 'application/json'
     },
     body: info
-  }).then((response) => response.json())
+  }).then((res) => res.json())
   .then((data)=>{
 
-  $('input[type="text"], textarea').val('');
+  $('input[type="text"], input[type="email"], textarea').val('');
 $('input[type=checkbox]').prop('checked',false);
 
     if (data.success === 'Ok') {
