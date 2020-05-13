@@ -140,21 +140,34 @@ app.get('/admin', (req, res) => {
   }
 });
 
-app.post('/admin', (req, res) => {
+app.post('/admin', (req, res, next) => {
 
-  const user = new User({
-    username: req.body.username,
-    password: req.body.password
-  });
+    const user = new User({
+      username: req.body.username,
+      password: req.body.password
+    });
 
-  req.login(user, (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.redirect('/forms');
-    }
+    passport.authenticate('local',
+    (err, user, info) => {
+
+      if (err) {
+        return res.redirect('/admin');
+      }
+
+      if (!user) {
+        return res.redirect('/admin');
+      }
+
+      req.logIn(user, function(err) {
+        if (err) {
+            return res.redirect('/admin');
+        }
+
+        return res.redirect('/forms');
+      });
+
+    })(req, res, next);
   });
-});
 
 app.post('/formData', [
 
