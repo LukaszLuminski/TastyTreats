@@ -96,12 +96,6 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/register', (req, res) => {
-  res.render('register', {
-    title: 'Tasty Treats | Register'
-  });
-});
-
 app.get('/forms', (req, res) => {
 
   res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
@@ -130,22 +124,6 @@ app.post('/logout', (req, res) => {
 
   req.session.destroy(function(err) {
     res.redirect('/admin');
-  });
-});
-
-app.post('/register', (req, res) => {
-
-  User.register({
-    username: req.body.username
-  }, req.body.password, (err, user) => {
-    if (err) {
-      console.log(err);
-      res.redirect('/register');
-    } else {
-      passport.authenticate('local')(req, res, () => {
-        res.redirect('/forms');
-      });
-    }
   });
 });
 
