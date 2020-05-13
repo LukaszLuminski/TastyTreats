@@ -71,3 +71,7 @@ body {
 .positive {
   background-color: green;
 }
+
+.word img {
+  width: 30px;
+}

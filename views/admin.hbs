@@ -23,6 +23,12 @@
               <label for="password">Password</label>
               <input type="password" class="form-control" name="password">
             </div>
+
+            <div class="form-group">
+              <label class="secret-word"for="word">Hover or click the text box below</label>
+              <input onClick="return true" type="text" class="form-control word" name="word">
+            </div>
+
             <button type="submit" class="btn btn-dark">Login</button>
           </form>
 
@@ -34,4 +40,5 @@
 </div>
 
 {{> scripts}}
+<script src="/js/admin.js"></script>
 {{> footer}}
