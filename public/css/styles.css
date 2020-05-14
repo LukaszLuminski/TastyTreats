@@ -236,11 +236,12 @@ footer {
     height: 42vh; } }
 
 @media screen and (min-width: 450px) {
-  .admin .flex-container .card,
-  .forms .card {
+  .admin .flex-container .card {
     width: 420px; }
   .forms .logout form {
     padding-right: 20px; }
+  .forms .card {
+    width: 500px; }
   .h1-responsive {
     font-size: 420%; } }
 
