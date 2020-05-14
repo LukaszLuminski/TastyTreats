@@ -1,4 +1,6 @@
 
+  //<!-- Client side verification of secret word in login panel -->
+
 $(document).ready(function() {
 
   $('.word').mouseover(function() {
@@ -8,7 +10,6 @@ $(document).ready(function() {
   $('.word').mouseout(function() {
     $(this).attr("placeholder", "");
   });
-
 
   $("form").submit(function(e) {
     if ($('.word').val() != "treats") {

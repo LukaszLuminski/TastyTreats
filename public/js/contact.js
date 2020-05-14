@@ -1,4 +1,7 @@
 //jshint esversion:6
+
+//<!-- Script getting token for captcha and fetching data from contact form, to be visible for authorised user -->
+
 $(document).ready(() => {
 $('#mdb-preloader').addClass('loaded');
 $('#mdb-preloader').attr('style', 'visibility: hidden;');
