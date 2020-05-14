@@ -103,20 +103,25 @@ html {
 .form-check {
   padding-left: 0; }
 
-.errorContainer {
-  background: #DDAAAA;
-  padding: 2px;
+ul {
+  margin-bottom: 0 !important; }
+
+.errorContainer,
+.successContainer {
+  padding: 10px;
+  border-radius: 2px;
   display: none;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  transition: .4s; }
+
+.errorContainer {
+  background: #DDAAAA; }
 
 .error {
   color: #E03D3D; }
 
 .successContainer {
-  background: #85e085;
-  padding: 2px;
-  display: none;
-  margin-bottom: 25px; }
+  background: #85e085; }
 
 .success {
   color: black; }
@@ -173,7 +178,7 @@ footer {
   .navbar,
   footer {
     padding-left: 18%;
-    padding-right: 18%; }
+    padding-right: 17%; }
   .mb-4 {
     padding-right: 16%;
     padding-left: 18%; } }
@@ -194,7 +199,8 @@ footer {
 @media screen and (max-width: 991px) {
   .description p {
     font-size: 18px; }
-  .mb-4, .description {
+  .description,
+  .mb-4 {
     padding-right: 5%;
     padding-left: 5%; } }
 
@@ -210,6 +216,8 @@ footer {
   .navbar {
     padding-left: 5%;
     padding-right: 2%; }
+  .description {
+    padding-top: 22px; }
   footer {
     padding-left: 5%;
     padding-right: 38%; } }

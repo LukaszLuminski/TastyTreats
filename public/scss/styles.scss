@@ -130,11 +130,21 @@ html {
   padding-left: 0;
 }
 
-.errorContainer {
-  background: #DDAAAA;
-  padding: 2px;
+ul {
+  margin-bottom: 0 !important;
+}
+
+.errorContainer,
+.successContainer {
+  padding: 10px;
+  border-radius: 2px;
   display: none;
   margin-bottom: 25px;
+  transition: .4s;
+}
+
+.errorContainer {
+  background: #DDAAAA;
 }
 
 .error {
@@ -143,9 +153,6 @@ html {
 
 .successContainer {
   background: #85e085;
-  padding: 2px;
-  display: none;
-  margin-bottom: 25px;
 }
 
 .success {
@@ -213,7 +220,7 @@ footer {
   .navbar,
   footer {
     padding-left: 18%;
-    padding-right: 18%;
+    padding-right: 17%;
   }
 
   .mb-4 {
@@ -233,13 +240,11 @@ footer {
     padding-left: 9%;
   }
 }
-
 @media screen and (min-width: 992px) {
- .navbar-expand-lg .navbar-nav .nav-link {
-   padding-left: 2.2rem !important;
- }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 2.2rem !important;
+  }
 }
-
 @media screen and (max-width: 991px) {
   .description {
     p {
@@ -247,12 +252,12 @@ footer {
     }
   }
 
-  .mb-4, .description {
+  .description,
+  .mb-4 {
     padding-right: 5%;
     padding-left: 5%;
   }
 }
-
 @media screen and (max-width: 991px) and (min-width: 500px) {
   .navbar {
     padding-left: 5%;
@@ -264,11 +269,14 @@ footer {
     padding-right: 20%;
   }
 }
-
 @media screen and (max-width: 499px) {
   .navbar {
     padding-left: 5%;
     padding-right: 2%;
+  }
+
+  .description {
+    padding-top: 22px;
   }
 
   footer {
@@ -276,18 +284,16 @@ footer {
     padding-right: 38%;
   }
 }
-
 @media screen and (min-width: 1025px) {
   .mb-4 {
     padding-top: 100px;
     padding-bottom: 100px;
   }
 
-    .contact-header {
-      height: 45vh;
-    }
+  .contact-header {
+    height: 45vh;
   }
-
+}
 @media screen and (max-width: 1024px) and (min-width: 769px) {
   .mb-4 {
     padding-top: 18%;
@@ -308,7 +314,6 @@ footer {
     height: 42vh;
   }
 }
-
 @media screen and (max-width: 449px) {
   .mb-4 {
     padding-top: 4%;

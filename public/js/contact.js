@@ -72,9 +72,9 @@ function sendToken(captcha) {
 
         let msg = 'You have successfully submitted the form!';
         success.innerHTML = `<li>${msg}</li>`;
-
         console.log(data);
 
+          successContainer.classList.add("animated");
 
       } else {
         let error = document.querySelector('.error');
@@ -88,6 +88,9 @@ function sendToken(captcha) {
         data.errors.forEach(function(err) {
           error.innerHTML = `<li>${err.msg}</li>`;
         });
+
+        errorContainer.classList.add("animated");
+
         console.log(data);
       }
     }).catch(err => console.log(err));
