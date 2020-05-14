@@ -1,7 +1,8 @@
 //jshint esversion:6
-
+$(document).ready(() => {
 $('#mdb-preloader').addClass('loaded');
 $('#mdb-preloader').attr('style', 'visibility: hidden;');
+});
 
 $(".return-to-top").on('click', () => {
   $('html, body').animate({
