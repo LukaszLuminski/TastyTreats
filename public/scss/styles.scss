@@ -104,10 +104,6 @@ html {
   }
 }
 
-.h1-responsive {
-  font-size: 310%;
-}
-
 .mb-4 {
   margin-bottom: 0 !important;
   background-size: cover;
@@ -315,6 +311,9 @@ footer {
       width: 420px;
     }
   }
+  .h1-responsive {
+    font-size: 420%;
+  }
 }
 @media screen and (max-width: 449px) {
   .mb-4 {
@@ -330,12 +329,16 @@ footer {
     .card {
       width: 100%;
     }
+
   }
 
   .forms {
     .card {
       width: 90%;
     }
+  }
+  .h1-responsive {
+    font-size: 320% !important;
   }
 }
 
