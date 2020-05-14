@@ -239,6 +239,8 @@ footer {
   .admin .flex-container .card,
   .forms .card {
     width: 420px; }
+  .forms .logout form {
+    padding-right: 20px; }
   .h1-responsive {
     font-size: 420%; } }
 
@@ -252,6 +254,8 @@ footer {
     width: 100%; }
   .forms .card {
     width: 90%; }
+  .forms .logout form {
+    padding-right: 10px; }
   .h1-responsive {
     font-size: 320% !important; } }
 
@@ -281,7 +285,7 @@ footer {
   top: 0;
   background-color: #E8ECEF; }
   .forms .logout form button {
-    margin: 8px 18px 8px 8px; }
+    margin: 8px; }
 
 .forms .flex-container {
   padding-top: 80px;

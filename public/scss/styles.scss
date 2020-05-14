@@ -311,6 +311,11 @@ footer {
       width: 420px;
     }
   }
+
+  .forms .logout form {
+    padding-right: 20px;
+  }
+
   .h1-responsive {
     font-size: 420%;
   }
@@ -329,14 +334,18 @@ footer {
     .card {
       width: 100%;
     }
-
   }
 
   .forms {
     .card {
       width: 90%;
     }
+
+    .logout form {
+      padding-right: 10px;
+    }
   }
+
   .h1-responsive {
     font-size: 320% !important;
   }
@@ -379,7 +388,7 @@ footer {
     background-color: #E8ECEF;
 
     button {
-      margin: 8px 18px 8px 8px;
+      margin: 8px;
     }
   }
 
@@ -411,6 +420,7 @@ footer {
         .color-change {
           opacity: 0.5;
         }
+
         li {
           margin-bottom: 15px;
         }
