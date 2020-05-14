@@ -1,5 +1,10 @@
 //jshint esversion:6
 
+$(document).ready(() => {
+  $('#mdb-preloader').addClass('loaded');
+  $('#mdb-preloader').attr('style', 'visibility: hidden;');
+});
+
 let form = document.querySelector('form');
 let errorContainer = document.querySelector('.errorContainer');
 let successContainer = document.querySelector('.successContainer');
@@ -36,47 +41,47 @@ function sendToken(captcha) {
 
   fetch('/formData', {
 
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json, text/plain, */*',
-      'Content-type': 'application/json'
-    },
-    body: info
-  }).then((res) => res.json())
-  .then((data)=>{
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-type': 'application/json'
+      },
+      body: info
+    }).then((res) => res.json())
+    .then((data) => {
 
-  $('input[type="text"], input[type="email"], textarea').val('');
-$('input[type=checkbox]').prop('checked',false);
+      $('input[type="text"], input[type="email"], textarea').val('');
+      $('input[type=checkbox]').prop('checked', false);
 
-    if (data.success === 'Ok') {
-      console.log('Successful!');
+      if (data.success === 'Ok') {
+        console.log('Successful!');
 
-    let success = document.querySelector('.success');
+        let success = document.querySelector('.success');
 
-      success.innerHTML = '';
+        success.innerHTML = '';
 
-      errorContainer.style.display = "none";
-      successContainer.style.display = "block";
+        errorContainer.style.display = "none";
+        successContainer.style.display = "block";
 
-      let msg = 'You have successfully submitted the form!';
-      success.innerHTML = `<li>${msg}</li>`;
+        let msg = 'You have successfully submitted the form!';
+        success.innerHTML = `<li>${msg}</li>`;
 
-      console.log(data);
+        console.log(data);
 
 
-    } else {
-      let error = document.querySelector('.error');
+      } else {
+        let error = document.querySelector('.error');
 
-      error.innerHTML = '';
+        error.innerHTML = '';
 
-      successContainer.style.display = "none";
+        successContainer.style.display = "none";
 
-      errorContainer.style.display = "block";
+        errorContainer.style.display = "block";
 
-      data.errors.forEach(function(err) {
-        error.innerHTML = `<li>${err.msg}</li>`;
-      });
-      console.log(data);
-    }
-  }).catch(err => console.log(err));
+        data.errors.forEach(function(err) {
+          error.innerHTML = `<li>${err.msg}</li>`;
+        });
+        console.log(data);
+      }
+    }).catch(err => console.log(err));
 }

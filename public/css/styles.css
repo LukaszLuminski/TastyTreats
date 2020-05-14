@@ -3,6 +3,16 @@ body {
   height: 100%;
   width: 100%; }
 
+#mdb-preloader {
+  background-color: #0a0c10; }
+
+#mdb-preloader.loaded {
+  opacity: 0;
+  transition: .3s ease-in 1s; }
+
+.preloader-wrapper .spinner-yellow-only {
+  border-color: #da71a9; }
+
 .fluid-container {
   background-color: #E8ECEF;
   width: 100vw;
@@ -25,17 +35,20 @@ body {
   .navbar .navbar-brand {
     font-size: 1.9rem !important;
     padding-top: 0;
-    padding-bottom: 0; }
+    padding-bottom: 0;
+    color: #fb0473; }
 
 .nav-link:not(.last) {
   pointer-events: none; }
 
 .fa, .fas {
-  color: #4285f4 !important; }
+  color: #fb0473 !important; }
 
 .submit {
   margin-left: 0;
-  margin-top: 25px; }
+  margin-top: 25px;
+  color: white;
+  background-color: #fb0473; }
 
 .contact-header {
   background-color: black;
@@ -63,7 +76,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.8;
+  opacity: .8;
   position: absolute;
   background-size: cover;
   background-position: center;
@@ -87,6 +100,9 @@ body {
 .md-form label {
   color: #a6a6a6;
   font-weight: 400; }
+
+.form-check {
+  padding-left: 0; }
 
 .errorContainer {
   background: #DDAAAA;
@@ -132,3 +148,7 @@ body {
 .centered {
   padding-top: 200px;
   text-align: center; }
+
+.highlight {
+  background: #75f075;
+  border-radius: 2px; }

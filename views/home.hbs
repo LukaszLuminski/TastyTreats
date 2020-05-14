@@ -4,6 +4,22 @@
 
 {{> navigation}}
 
+<div id="mdb-preloader" class="flex-center">
+  <div class="preloader-wrapper active">
+    <div class="spinner-layer spinner-yellow-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <header class="contact-header">
 
   <div class="contact-bg">
@@ -84,12 +100,12 @@
       </div>
       <!--Grid row-->
       <div class="form-check">
-        <input type="hidden" name="signUp" id="singUp" class="form-check-input" value="no"><input type="checkbox" name="signUp" id="singUp" class="form-check-input" onclick="this.previousSibling.value='yes'">
+        <input type="checkbox" name="signUp" id="signUp" class="form-check-input" value='yes'>
         <label for="signUp" class="form-check-label">I want to sign up for the newsletter!</label>
       </div>
       <div class="text-center text-md-left">
 
-        <button class="submit btn btn-primary">Submit</button>
+        <button class="submit btn">Submit</button>
       </div>
     </form>
 
