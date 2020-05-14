@@ -1,20 +1,16 @@
 {{> header}}
 
-<div class="fluid-container">
-  <h1>Login</h1>
+<section class="admin">
+<div class=" flex-container">
 
   <div class="row">
     <div class="col-sm-8">
       <div class="card">
         <div class="card-body">
 
-          <!-- Makes POST request to /login route -->
+          <!-- Makes POST request to /admin route -->
           <form action="/admin" method="POST">
-            <div class="errorContainer">
-              <ul class="error">
-                {{error}}
-              </ul>
-            </div>
+
             <div class="form-group">
               <label for="name">Name</label>
               <input type="name" class="form-control" name="username">
@@ -25,20 +21,24 @@
             </div>
 
             <div class="form-group">
-              <label class="secret-word"for="word">Hover or click the text box below</label>
+              <label class="secret-word" for="word">Hover or click the text box below</label>
               <input onClick="return true" type="text" class="form-control word" name="word">
             </div>
 
-            <button type="submit" class="btn btn-dark">Login</button>
-          </form>
 
+
+            <div class="btn-margin">
+              <button type="submit" class="btn btn-dark">Login</button>
+          </form>
         </div>
       </div>
     </div>
-
   </div>
-</div>
 
-{{> scripts}}
+</div>
+</div>
+</section>
+
+{{> admin-scripts}}
 <script src="/js/admin.js"></script>
 {{> footer}}

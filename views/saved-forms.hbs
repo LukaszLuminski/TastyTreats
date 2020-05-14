@@ -1,33 +1,44 @@
 {{> header}}
-<div class="fluid-container">
+
+<section class="forms">
+
+  <div class="logout text-right">
+    <form class="" action="/logout" method="post">
+      <button class="btn btn btn-dark" type="submit" role="button" onClick="history.go(0)">Log Out</btn>
+    </form>
+
+  </div>
+
+<div class="flex-container">
+
+
 
 {{#each forms}}
 
-  <div class="card card-outline-primary text-center">
+  <div class="card">
+    <div class="buttons">
     <button class="hide-icon" data-effect="fadeOut">HIDE</button>
     <form class="delete-form" action="/delete" method="post">
       <input type="hidden" name="id" value="{{ this._id }}">
       <button class="close-icon" data-effect="fadeOut" type="submit">DELETE</button>
     </form>
+    </div>
     <div class="card-block">
       <ul>
-        <li>Date: {{ this.date }}</li>
-        <li>Name: {{ this.name }}</li>
-        <li>Email: {{ this.email }}</li>
-        <li>Message: {{ this.message }}</li>
-        <li>Wants newsletter: <span class='highlight'>{{ this.signUp }}</span></li>
+        <li><span class="color-change">Date: </span>{{ this.date }}</li>
+       <li><span class="color-change">Name: </span>{{ this.name }}</li>
+        <li><span class="color-change">Email: </span>{{ this.email }}</li>
+        <li><span class="color-change">Message: </span>{{ this.message }}</li>
+        <li><span class="color-change">Wants newsletter: </span> {{ this.signUp }}</li>
       </ul>
     </div>
   </div>
 {{/each}}
 
-<form class="" action="/logout" method="post">
-  <button class="btn btn-light btn-lg" type="submit" role="button" onClick="history.go(0)">Log Out</btn>
-</form>
-
 </div>
 
-{{> scripts}}
+</section>
 
+{{> admin-scripts}}
 <script src="/js/savedForms.js"></script>
 {{> footer}}
