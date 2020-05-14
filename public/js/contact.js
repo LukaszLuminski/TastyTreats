@@ -2,9 +2,9 @@
 
 //<!-- Script getting token for captcha and fetching data from contact form, to be visible for authorised user -->
 
-$(document).ready(() => {
-$('#mdb-preloader').addClass('loaded');
-$('#mdb-preloader').attr('style', 'visibility: hidden;');
+$('.contact-header').ready(() => {
+  $('#mdb-preloader').addClass('loaded');
+  $('#mdb-preloader').attr('style', 'visibility: hidden;');
 });
 
 $(".return-to-top").on('click', () => {
@@ -78,7 +78,7 @@ function sendToken(captcha) {
         success.innerHTML = `<li>${msg}</li>`;
         console.log(data);
 
-          successContainer.classList.add("animated");
+        successContainer.classList.add("animated");
 
       } else {
         let error = document.querySelector('.error');
@@ -89,13 +89,32 @@ function sendToken(captcha) {
 
         errorContainer.style.display = "block";
 
-        data.errors.forEach(function(err) {
-          error.innerHTML = `<li>${err.msg}</li>`;
-        });
+        console.log(data.errors);
+
+        const extractedErrors = [];
+
+        data.errors.map(err => extractedErrors.push(err.msg));
+
+
+        function makeUL(array) {
+
+          const list = document.createElement('ul');
+
+          array.forEach((i) => {
+
+            const item = document.createElement('li');
+
+            item.appendChild(document.createTextNode(i));
+
+            list.appendChild(item);
+          });
+          return list;
+        }
+
+        error.appendChild(makeUL(extractedErrors));
 
         errorContainer.classList.add("animated");
 
-        console.log(data);
       }
     }).catch(err => console.log(err));
 }

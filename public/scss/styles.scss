@@ -312,13 +312,14 @@ footer {
   }
 
   .forms {
-  .logout form {
-    padding-right: 20px;
+    .logout form {
+      padding-right: 20px;
+    }
+
+    .card {
+      width: 500px;
+    }
   }
-  .card {
-    width: 500px;
-  }
-}
 
   .h1-responsive {
     font-size: 420%;

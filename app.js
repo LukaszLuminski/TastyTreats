@@ -174,8 +174,10 @@ app.post('/admin', (req, res, next) => {
 //<!-- Posting data from contact form -->
 app.post('/formData', [
 
+  check('name').not().isEmpty().withMessage('Name field cannot be blank.'),
   //<!-- Checking if email format is correct, also implemented from client side -->
-  check('email').isEmail().withMessage('Email address is invalid')
+  check('email').isEmail().withMessage(' Email address is invalid.'),
+  check('message').not().isEmpty().withMessage('Message field cannot be blank.'),
 
 ], (req, res) => {
 
