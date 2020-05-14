@@ -115,10 +115,15 @@ ul {
   background: #DDAAAA; }
 
 .error {
-  color: #E03D3D; }
+  color: #E03D3D;
+  padding-left: 0 !important; }
+  .error ul {
+    padding-left: 30px !important; }
 
 .successContainer {
   background: #85e085; }
+  .successContainer ul {
+    padding-left: 25px !important; }
 
 .success {
   color: black; }

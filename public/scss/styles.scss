@@ -145,10 +145,17 @@ ul {
 
 .error {
   color: #E03D3D;
+  padding-left: 0 !important;
+  ul {
+  padding-left: 30px !important;
+  }
 }
 
 .successContainer {
   background: #85e085;
+  ul {
+  padding-left: 25px !important;
+  }
 }
 
 .success {

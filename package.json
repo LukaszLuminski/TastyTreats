@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ui": "browser-sync start --proxy=localhost:3000 --files='**/*.css, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify",
+    "ui": "browser-sync start --proxy=localhost:5000 --files='**/*.css, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify",
     "scss": "node-sass --watch public/scss -o public/css"
   },
   "author": "Lukasz Luminski",
