@@ -170,7 +170,6 @@ ul {
 .close-icon,
 .hide-icon {
   cursor: pointer;
-  // width: 69px;
   display: inline;
   background: white;
   border: none;
@@ -309,7 +308,6 @@ footer {
     height: 42vh;
   }
 }
-
 @media screen and (min-width: 450px) {
   .admin .flex-container,
   .forms {
@@ -318,7 +316,6 @@ footer {
     }
   }
 }
-
 @media screen and (max-width: 449px) {
   .mb-4 {
     padding-top: 4%;
@@ -329,11 +326,11 @@ footer {
     height: 30vh;
   }
 
-.admin .flex-container {
-  .card {
-    width: 100%;
+  .admin .flex-container {
+    .card {
+      width: 100%;
+    }
   }
-}
 
   .forms {
     .card {
@@ -391,7 +388,7 @@ footer {
     min-height: 100vh;
 
     .card {
-      padding: 8px 10px 20px;
+      padding: 8px 25px 20px;
       display: flex;
       margin: 20px auto;
 
@@ -403,12 +400,18 @@ footer {
           margin-right: -3px;
         }
       }
+
       ul {
         list-style: none;
+        padding: 0 !important;
+
         .color-change {
-          opacity: .5;
+          opacity: 0.5;
         }
+        li {
+          margin-bottom: 15px;
+        }
+      }
     }
   }
-}
 }
