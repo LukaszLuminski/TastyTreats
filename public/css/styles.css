@@ -1,17 +1,16 @@
-body {
-  background-color: white;
-  height: 100%;
-  width: 100%; }
+body,
+html {
+  background-color: white; }
 
 #mdb-preloader {
-  background-color: #0a0c10; }
+  background-color: #eae3eb; }
 
 #mdb-preloader.loaded {
   opacity: 0;
-  transition: .3s ease-in 1s; }
+  transition: 0.3s ease-in 1s; }
 
 .preloader-wrapper .spinner-yellow-only {
-  border-color: #da71a9; }
+  border-color: #fb0473; }
 
 .fluid-container {
   background-color: #E8ECEF;
@@ -23,14 +22,13 @@ body {
   background-color: #f2f0f5;
   position: fixed;
   width: 100vw;
-  padding-left: 18%;
-  padding-right: 18%;
   background-size: cover;
   background-position: center;
   background-image: url("/images/body-bg.jpeg"); }
   .navbar a:not(.navbar-brand) {
     font-size: 1.3rem !important; }
-  .navbar a, .navbar .navbar-brand a {
+  .navbar .navbar-brand a,
+  .navbar a {
     font-family: 'Satisfy', sans-serif, cursive !important; }
   .navbar .navbar-brand {
     font-size: 1.9rem !important;
@@ -41,8 +39,8 @@ body {
 .nav-link:not(.last) {
   pointer-events: none; }
 
-.fa, .fas {
-  color: #fb0473 !important; }
+.contact-icon {
+  color: #fb0473; }
 
 .submit {
   margin-left: 0;
@@ -55,7 +53,6 @@ body {
   display: table-cell;
   text-align: center;
   width: 100vw;
-  height: 400px;
   z-index: 1;
   position: relative;
   vertical-align: middle;
@@ -66,7 +63,7 @@ body {
   margin-top: 60px; }
   .description p {
     font-weight: 400;
-    font-size: 18px; }
+    font-size: 25px; }
   .description h1 {
     font-family: 'Satisfy', sans-serif, cursive !important; }
 
@@ -76,7 +73,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: .8;
+  opacity: 0.8;
   position: absolute;
   background-size: cover;
   background-position: center;
@@ -89,12 +86,14 @@ body {
   font-size: 310%; }
 
 .mb-4 {
-  padding: 54px 18%;
+  margin-bottom: 0 !important;
   background-size: cover;
   background-position: center;
   background-image: url("/images/body-bg.jpeg"); }
 
-.md-form textarea.md-textarea, .md-form input[type="text"]:not(.browser-default), .md-form input[type="email"]:not(.browser-default) {
+.md-form input[type="email"]:not(.browser-default),
+.md-form input[type="text"]:not(.browser-default),
+.md-form textarea.md-textarea {
   border-bottom: 1px solid #8b99a7; }
 
 .md-form label {
@@ -152,3 +151,105 @@ body {
 .highlight {
   background: #75f075;
   border-radius: 2px; }
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background-color: #333333;
+  color: white;
+  font-size: 15px;
+  display: flex;
+  height: 50px;
+  justify-content: space-between; }
+
+.fa-chevron {
+  color: white; }
+
+.return-to-top:hover {
+  color: white;
+  cursor: pointer; }
+
+@media screen and (min-width: 1300px) {
+  .navbar,
+  footer {
+    padding-left: 18%;
+    padding-right: 18%; }
+  .mb-4 {
+    padding-right: 16%;
+    padding-left: 18%; } }
+
+@media screen and (max-width: 1299px) and (min-width: 992px) {
+  .navbar,
+  footer {
+    padding-left: 9%;
+    padding-right: 9%; }
+  .mb-4 {
+    padding-right: 7%;
+    padding-left: 9%; } }
+
+@media screen and (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 2.2rem !important; } }
+
+@media screen and (max-width: 991px) {
+  .description p {
+    font-size: 18px; }
+  .mb-4, .description {
+    padding-right: 5%;
+    padding-left: 5%; } }
+
+@media screen and (max-width: 991px) and (min-width: 500px) {
+  .navbar {
+    padding-left: 5%;
+    padding-right: 5%; }
+  footer {
+    padding-left: 5%;
+    padding-right: 20%; } }
+
+@media screen and (max-width: 499px) {
+  .navbar {
+    padding-left: 5%;
+    padding-right: 2%; }
+  footer {
+    padding-left: 5%;
+    padding-right: 38%; } }
+
+@media screen and (min-width: 1025px) {
+  .mb-4 {
+    padding-top: 100px;
+    padding-bottom: 100px; }
+  .contact-header {
+    height: 45vh; } }
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .mb-4 {
+    padding-top: 18%;
+    padding-bottom: 18%; }
+  .contact-header {
+    height: 45vh; } }
+
+@media screen and (max-width: 768px) and (min-width: 450px) {
+  .mb-4 {
+    padding-top: 15%;
+    padding-bottom: 15%; }
+  .contact-header {
+    height: 42vh; } }
+
+@media screen and (max-width: 449px) {
+  .mb-4 {
+    padding-top: 4%;
+    padding-bottom: 4%; }
+  .contact-header {
+    height: 30vh; } }
+
+.grecaptcha-badge {
+  width: 256px;
+  height: 60px;
+  display: block;
+  transition: right 0.3s ease 0s;
+  position: fixed;
+  bottom: 13px;
+  right: -186px;
+  box-shadow: gray 0 0 5px;
+  border-radius: 2px;
+  overflow: hidden; }

@@ -1,9 +1,16 @@
 //jshint esversion:6
 
-$(document).ready(() => {
-  $('#mdb-preloader').addClass('loaded');
-  $('#mdb-preloader').attr('style', 'visibility: hidden;');
+$('#mdb-preloader').addClass('loaded');
+$('#mdb-preloader').attr('style', 'visibility: hidden;');
+
+$(".return-to-top").on('click', () => {
+  $('html, body').animate({
+    scrollTop: $("body").offset().top
+  }, 1000);
+  preventDefault();
 });
+
+$(".copyright").text(new Date().getFullYear());
 
 let form = document.querySelector('form');
 let errorContainer = document.querySelector('.errorContainer');
