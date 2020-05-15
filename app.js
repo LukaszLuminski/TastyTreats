@@ -53,7 +53,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-//<!-- End -->
 
 //<!-- Creating session -->
 app.use(session({
@@ -64,12 +63,10 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-//<!-- End -->
 
 //<! --Setting Passport.js for user authorisation -->
 app.use(passport.initialize());
 app.use(passport.session());
-//<!--End-->
 
 //<! --Connecting to local or online database -->
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/tasty-treatsDB', {
@@ -77,11 +74,9 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/tasty-tre
   useUnifiedTopology: true,
   useFindAndModify: false
 });
-//<!-- End -->
 
 //<!-- For depreciation warning -->
 mongoose.set('useCreateIndex', true);
-//<!--End-->
 
 //<!-- Getting homepage route -->
 app.get('/', (req, res) => {
@@ -89,7 +84,6 @@ app.get('/', (req, res) => {
     title: 'Tasty Treats | Contact'
   });
 });
-//<!-- End -->
 
 //<!-- Getting secret page route -->
 app.get('/forms', (req, res) => {
