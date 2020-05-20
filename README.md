@@ -4,7 +4,7 @@
 ---
 
 <h1 id="tastytreats">TastyTreats</h1>
-<p>An application made with Node.js and Express, connected to MongoDB and deployed with Heroku. Front-end has been built with jQuery, Boostrap and Sass.</p>
+<p>An application made with Node.js and Express, connected to MongoDB and deployed with Heroku. Front-end has been built with jQuery, Bootstrap and Sass.</p>
 <h2 id="description">Description</h2>
 <p>User fills in and submits the form provided. The data from the form is validated - both from the server and a client side - and appropriate error or success messages are displayed.</p>
 <p>Then, Google reCAPTCHA v3 is initialized. If no errors are found, data records are stored in the database and an authorised user can display them on a separate page, the most recent ones on top.</p>
