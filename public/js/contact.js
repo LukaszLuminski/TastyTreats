@@ -61,15 +61,15 @@ function sendToken(captcha) {
     }).then((res) => res.json())
     .then((data) => {
 
-      $('input[type="text"], input[type="email"], textarea').val('');
-      $('input[type=checkbox]').prop('checked', false);
-
       if (data.success === 'Ok') {
         console.log('Successful!');
 
         let success = document.querySelector('.success');
 
         success.innerHTML = '';
+
+        $('input[type="text"], input[type="email"], textarea').val('');
+        $('input[type=checkbox]').prop('checked', false);
 
         errorContainer.style.display = "none";
         successContainer.style.display = "block";
