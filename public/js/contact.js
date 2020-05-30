@@ -89,8 +89,6 @@ function sendToken(captcha) {
 
         errorContainer.style.display = "block";
 
-        console.log(data.errors);
-
         const extractedErrors = [];
 
         data.errors.map(err => extractedErrors.push(err.msg));
